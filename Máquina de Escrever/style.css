@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: rgb(0, 243, 0);
+    font-family: monospace;
+    border-right: 4px solid;
+    width: 12ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(12), blinking 0.5s infinite step-end alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
