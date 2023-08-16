@@ -42,6 +42,8 @@ a função anonima por recebe os comando por uma arrow function
 é declarada uma constante que pega o numero sorteado e o relaciona as url das imagens dentro da array
 
 então fazemos com que a constante que recebe a imagem padrão do html, envie para o html uma nova tag com a nova imagem que foi sorteada linkada nela, assim a imagem sorteada ira subistituir a imagem padrão
+
+obs: innerHTML, literalmente é usado para inserir algo no html pelo script, usando a constante que recebe algum elemento do html. o que tiver dentro desse elemento ou o proprio elemento sera subistituido/ alterado.
 */
 
 // feito por mim
