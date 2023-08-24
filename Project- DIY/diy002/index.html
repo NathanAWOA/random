@@ -9,14 +9,14 @@
 </head>
 <body>
 
-   <form action="form.js" method="post" id="form">
+   <form  id="form">
 
     <h1>DIY - Formulário simples</h1>
 
-    <label for="">Nome:</label>
-    <input type="text">
-    <label for="">Sobrenome:</label>
-    <input type="text">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" required>
+    <label for="surname">Sobrenome:</label>
+    <input type="text" id="surname" required>
 
     <div id="sensitive-info">
 
@@ -24,16 +24,16 @@
             <label for="idate">Data de nascimento:</label>
             <div id="date">
 
-                <input type="date" name="date" id="idate">
+                <input type="date" name="date" id="idate" required>
 
             </div>
         </div>
 
         <div id="relationship">
 
-            <label for="">Estado civil:</label>
+            <label for="iec">Estado civil:</label>
 
-            <select name="" id="estado-civil">
+            <select name="ec" id="iec" required>
                 <option value=""></option>
                 <option value="">Solteiro(a)</option>
                 <option value="">Casado(a)</option>
@@ -44,18 +44,20 @@
 
         <div id="gender">
 
-            <label for="">Genero:</label>
+            <label>Genero:</label>
 
-            <div class="gender">
-                Masculino <input id="sex" type="checkbox">
-                Feminino <input id="sex" type="checkbox">
+            <div class="gender" required>
+                <label for="sex-m">Masculino</label>
+                <input id="sex-m" type="checkbox">
+                <label for="sex-f">Feminino</label> 
+                <input id="sex-f" type="checkbox">
             </div>
         </div>
     </div> 
-    <label for="">Estado</label>
-    <input type="text">
-    <label for="">Cidade</label>
-    <input type="text">
+    <label for="state">Estado</label>
+    <input type="text" id="state" required>
+    <label for="city">Cidade</label>
+    <input type="text" id="city" required>
     
     <label for="imsg">Deixe sua mensagem:</label>
     <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>

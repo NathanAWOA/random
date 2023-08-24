@@ -73,7 +73,11 @@ select {
     font-size: 1.5rem;
 }
 
-#sex {
+.gender label {
+    font-weight: normal;
+}
+
+#sex-m, #sex-f {
     height: 2rem;
     width: 2rem;
     margin-right: .5rem;
@@ -97,6 +101,7 @@ input {
 
 textarea {
     font-size: 1.2rem;
+    padding: 0 5px;
 }
 
 input, button {
