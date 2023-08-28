@@ -1,7 +1,7 @@
 //variaveis
 
 const form = document.querySelector("#form");
-const nameInput = document.querySelector("#name");
+//const nameInput = document.querySelector("#name");
 const surName = document.querySelector("#surname");
 const birth = document.querySelector("#idate");
 const relationship = document.querySelector("#iec");
@@ -33,7 +33,8 @@ form.addEventListener("submit", (e) => {
 
     //ainda não sei como fazer pra usar os dados direito
     
-        console.log(form);
+        const nameInput = document.querySelector("#nome").value;
+        alert(`Prezado cliente ${nameInput}, seu formulário e sua mensagem foram enviados com sucesso. Agradecemos a colaboração.`);
     
 });
 
