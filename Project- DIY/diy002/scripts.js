@@ -10,6 +10,8 @@ const state = document.querySelector("#state");
 const city = document.querySelector("#city");
 const msg = document.querySelector("#imsg");
 
+
+
 /*
     console.log(
         form,
@@ -30,6 +32,9 @@ form.addEventListener("submit", (e) => {
     e.preventDefault;
 
     //ainda não sei como fazer pra usar os dados direito
+    
+        console.log(form);
+    
 });
 
 //funções
