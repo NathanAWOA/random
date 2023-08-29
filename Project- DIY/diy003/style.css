@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+@media only screen and (max-width: 929px) {
+    
+    body {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 930px) {
+
 body {
     height: 100vh;
     background-image: linear-gradient(to left, lightgreen, green);
@@ -15,7 +25,7 @@ body {
     flex-direction: column;
     position: relative;
     text-align: center;
-    height: 220px;
+    height: 250px;
     box-shadow: 2px 2px 2px 2px green;
     border-radius: 2rem;
     
@@ -71,4 +81,6 @@ button {
     background-color: rgba(144, 238, 144, 0.171);
     transition: .2s;
     transform: translate( 0%, -2%);
+}
+
 }
