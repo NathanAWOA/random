@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnYep = document.querySelector("#yep");
     const btnNot = document.querySelector("#btn-not");
     const btnCopy = document.querySelector("#copy");
+    const modal = document.querySelector("dialog")
     const pixKey = ["e76d0f33-4849-4014-b2ff-2ca8dc97d1a6",
     "Chama no pix filhão"];
 
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     btnYep.addEventListener("click", function (eventoDeClick) {
-        window.location.href = "qr.jpeg";
+        //window.location.href = "qr.jpeg";
+        modal.showModal();
     });
 
     //eventoDeClick();

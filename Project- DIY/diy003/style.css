@@ -83,4 +83,35 @@ button {
     transform: translate( 0%, -2%);
 }
 
+dialog {
+    position: relative;
+    background-color: #30aa20;
+    flex-direction: column;
+    text-align: center;
+    height: 250px;
+    box-shadow: 2px 2px 2px 2px green;
+    border-radius: 2rem;
+    width: 75%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+#copy {
+    background-color: green;
+    color: #f1f1f1;
+    border-style: none;
+    border: 2px solid darkgreen;
+    border-radius: 2rem;
+}
+
+#copy:hover {
+    background-color: rgba(20, 97, 20, 0.993);
+    transition: .2s;
+    transform: translate( 0%, -2%);
+    cursor: pointer;
+}
+
 }
