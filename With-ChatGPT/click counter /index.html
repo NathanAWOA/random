@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Cliques</title>
+</head>
+<body>
+  <h1>Contador de Cliques</h1>
+  <p>Total de Cliques: <span id="contador">0</span></p>
+  <button id="botao">Clique Aqui</button>
+  <script>
+    const contadorElement = document.getElementById("contador");
+    const botao = document.getElementById("botao");
+
+    // Verifica se o contador já existe no localStorage e, se não, inicializa com 0
+    if (!localStorage.getItem("totalCliques")) {
+      localStorage.setItem("totalCliques", 0);
+    }
+
+    // Atualiza o contador na página
+    contadorElement.textContent = localStorage.getItem("totalCliques");
+
+    // Incrementa o contador e atualiza o localStorage quando o botão é clicado
+    botao.addEventListener("click", () => {
+      let totalCliques = parseInt(localStorage.getItem("totalCliques"));
+      totalCliques++;
+      localStorage.setItem("totalCliques", totalCliques);
+      contadorElement.textContent = totalCliques;
+    });
+  </script>
+</body>
+</html>
