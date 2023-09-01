@@ -3,11 +3,10 @@ const screen = document.querySelector("body");
 let x = 1;
 let y = 1;
 
-//let arena = document.querySelector("#arena");
-
 let box = document.querySelector("#box");
 
-screen.onkeyup = (event) => {
+function movement() { 
+    screen.onkeyup = (event) => {
     if (event.key === 'w') {
         console.log("cima");
 
@@ -32,6 +31,8 @@ screen.onkeyup = (event) => {
         box.style.right = `${x}px`;
     }
 };
+}
+movement();
 
 /*
 
