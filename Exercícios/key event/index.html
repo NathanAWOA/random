@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div id="box"></div>
+    <div id="container">
+        <h1>APERTE "W/A/S/D" PARA SE MOVER.</h1>
+        <p>OBS: SE ESTIVER COM O CAPSLOCK ATIVADO NÃO VAI FUNCIONAR. PRECIONAR A TECLA POR MUITO TEMPO PODE FAZER A CAIXA DEMORAR PARA TERMINAR O MOVIMENTO</p>
+        <div id="tecla"></div>
+        <div id="car">
+            <img id="right" src="img/car-right.png" alt="right">
+            <img id="left" src="img/car-left.png" alt="left" hidden>
+            <img id="top" src="img/car-top.png" alt="top" hidden>
+            <img id="bottom" src="img/car-bottom.png" alt="bottom" hidden>
+        </div>
+    </div>
 </body>
 </html>

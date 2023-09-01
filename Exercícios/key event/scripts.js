@@ -1,3 +1,4 @@
+/*
 const screen = document.querySelector("body");
 
 let x = 1;
@@ -33,6 +34,7 @@ function movement() {
 };
 }
 movement();
+*/
 
 /*
 
@@ -40,3 +42,40 @@ E SE EU TENTASSE FAZER O FOR E AI EU DETERMINARIA QUE O X E Y TERIAM VALOR 0 E E
 
 PROVELMENTE PRA ISSO EU VOU TER QUE FAZER UM FOR PRA CADA UM DELES.
 */
+
+//USING AJAX GOOGLE API
+
+$(document).keypress(function(event) {
+    switch(event.which) {
+        case 119:
+            $("#tecla").text("W"); //tecla W
+            $("img").animate({ "top": "-=50px"}, "fast");
+
+            console.log("CIMA");
+        break;
+
+        case 97:
+            $("#tecla").text("A"); //tecla A
+            $("img").animate({ "left": "-=50px"}, "fast");
+            
+            console.log("ESQUERDA");
+        break;
+
+        case 100:
+            $("#tecla").text("D"); //tecla D
+            $("img").animate({ "left": "+=50px"}, "fast");
+
+            console.log("DIREITA");
+        break;
+
+        case 115:
+            $("#tecla").text("S"); //tecla S
+            $("img").animate({ "top": "+=50px"}, "fast");
+
+            console.log("BAIXO");
+        break;
+    }
+});
+
+
+//TOGGLE IMG
