@@ -5,3 +5,19 @@
     padding: 20;
     position: absolute;
 }
+
+#right, #left {
+    width: 150px;
+    height: 100px;
+    margin: 50;
+    padding: 20;
+    position: absolute;
+}
+
+#top, #bottom {
+    width: 100px;
+    height: 150px;
+    margin: 50;
+    padding: 20;
+    position: absolute;
+}

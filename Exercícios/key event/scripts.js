@@ -1,6 +1,9 @@
 //USING AJAX GOOGLE API
 
 $(document).keypress(function(event) {
+   
+    //NÃO PRECISO MAIS DO SWITCH
+    /*
     switch(event.which) {
         case 119:
             $("#tecla").text("W"); //tecla W
@@ -18,7 +21,7 @@ $(document).keypress(function(event) {
 
         case 100:
             $("#tecla").text("D"); //tecla D
-            $("#among-us").animate({ "left": "+=50px"}, "fast");
+            //$("#among-us").animate({ "left": "+=50px"}, "fast");
 
             console.log("DIREITA");
         break;
@@ -30,8 +33,36 @@ $(document).keypress(function(event) {
             console.log("BAIXO");
         break;
     }
+    */
+
+    //TEST
+    
+        const test = event.key;
+        
+        if(test === "w" || test === "W") {
+            $("#among-us").animate({ "top": "-=50px"}, "fast");
+            console.log("FUNFOU COM IF");
+            console.log("FUNFOU COM CAPSLOCK");
+        }
+
+        if(test === "a" || test === "A") {
+            $("#among-us").animate({ "left": "-=50px"}, "fast");
+            console.log("FUNFOU COM IF");
+            console.log("FUNFOU COM CAPSLOCK");
+        }
+
+        if(test === "d" || test === "D") {
+            $("#among-us").animate({ "left": "+=50px"}, "fast");
+            console.log("FUNFOU COM IF");
+            console.log("FUNFOU COM CAPSLOCK");
+        }
+        
+        if(test === "s" || test === "S") {
+            $("#among-us").animate({ "top": "+=50px"}, "fast");
+            console.log("FUNFOU COM IF");
+            console.log("FUNFOU COM CAPSLOCK");
+        }
+        
+        console.log(test);
 
 });
-
-
-//TOGGLE IMG
