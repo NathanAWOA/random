@@ -1,13 +1,36 @@
+const direction = document.querySelector("#direction");
+const image = document.querySelector("#inicial");
+        
+direction.forEach((car) => {
+    car.addEventlistner("keyup", (e) => {
+        console.log(e);
+
+        direction.forEach((car) => 
+            car.querySelector(".car").classList.remove("selected")
+        );
+
+        const movement = e.target;
+
+        const id = movement.getAttribute("id");
+
+        movement.querySelector(".car").classList.add("selected");
+
+        image.classList.toggle("changing");
+        image.setAttribute("src", `img/car-${id}.png`);
+    });
+            
+});
+
 //USING AJAX GOOGLE API
 
 $(document).keypress(function(event) {
 
     //TEST
-    
-        const test = event.key;
-        
+        test = event.target;
+
+        /*
         if(test === "w" || test === "W") {
-            $("#among-us").animate({ "top": "-=50px"}, "fast");
+            $("#right").animate({ "top": "-=50px"}, "fast");
             console.log("CIMA");
             console.log("FUNFOU COM IF");
    
@@ -33,7 +56,7 @@ $(document).keypress(function(event) {
             console.log("FUNFOU COM IF");
 
         }
-        
+        */
         console.log(test);
 
            

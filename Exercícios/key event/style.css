@@ -6,7 +6,7 @@
     position: absolute;
 }
 
-#right, #left {
+#inicial, #right, #left {
     width: 150px;
     height: 100px;
     margin: 50;
