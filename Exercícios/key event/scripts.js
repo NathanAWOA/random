@@ -6,62 +6,54 @@ $(document).keypress(function(event) {
 
     //TEST
         
-        const amongas = document.querySelector("#amongas");
+        const car = document.querySelector("#car");
         const top = document.querySelector("#top");
         const bottom = document.querySelector("#bottom");
         const left = document.querySelector("#left");
         const right = document.querySelector("#right");
 
-        const test = event.key;
+        const direction = event.key;
 
-        if(test === "w" || test === "W") {
+        if(direction === "w" || direction === "W") {
             top.style.opacity = 1;
             bottom.style.opacity = 0;
             left.style.opacity = 0;
             right.style.opacity = 0;
             
-            $(amongas).animate({ "top": "-=50px"}, "fast");
+            $(car).animate({ "top": "-=50px"}, "fast");
             console.log("CIMA");
-            console.log("FUNFOU COM IF");
-   
         }
 
-        if(test === "a" || test === "A") {
+        if(direction === "a" || direction === "A") {
             top.style.opacity = 0;
             bottom.style.opacity = 0;
             left.style.opacity = 1;
             right.style.opacity = 0;
 
-            $(amongas).animate({ "left": "-=50px"}, "fast");
+            $(car).animate({ "left": "-=50px"}, "fast");
             console.log("DIREITA");
-            console.log("FUNFOU COM IF");
-
         }
 
-        if(test === "d" || test === "D") {
+        if(direction === "d" || direction === "D") {
             top.style.opacity = 0;
             bottom.style.opacity = 0;
             left.style.opacity = 0;
             right.style.opacity = 1;
 
-            $(amongas).animate({ "left": "+=50px"}, "fast");
+            $(car).animate({ "left": "+=50px"}, "fast");
             console.log("ESQUERDA");
-            console.log("FUNFOU COM IF");
-
         }
         
-        if(test === "s" || test === "S") {
+        if(direction === "s" || direction === "S") {
             top.style.opacity = 0;
             bottom.style.opacity = 1;
             left.style.opacity = 0;
             right.style.opacity = 0;
 
-            $(amongas).animate({ "top": "+=50px"}, "fast");
+            $(car).animate({ "top": "+=50px"}, "fast");
             console.log("BAIXO");
-            console.log("FUNFOU COM IF");
-
         }
         
-        console.log(test);
+        console.log(direction);
 
 });
