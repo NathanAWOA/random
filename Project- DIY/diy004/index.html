@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Horários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="inputs-container">
+            <label for="periodo">Periodo</label>
+            <select name="periodo" id="periodo">
+                <option value="" id="esconder">--- Selecione o periodo ---</option>
+                <option value="">Manhã</option>
+                <option value="">Tarde</option>
+                <option value="">Noite</option>
+            </select>
+            <label for="dia">Dia:</label>
+            <select name="dia" id="dia">
+                <option value="" id="esconder">--- Dia da semana ---</option>
+                <option value="">Segunda</option>
+                <option value="">Terça</option>
+                <option value="">Quarta</option>
+                <option value="">Quinta</option>
+                <option value="">Sexta</option>
+            </select>
+            <div id="aulas-container">
+                <h1>Aula:</h1>
+                <div id="aulas">
+                    <label for="1">1º Aula</label>
+                    <input id="1" type="checkbox">
+                    <label for="2">2º Aula</label>
+                    <input id="2" type="checkbox">
+                    <label for="3">3º Aula</label>
+                    <input id="3" type="checkbox">
+                    <label for="4">4º Aula</label>
+                    <input id="4" type="checkbox">
+                    <label for="5">5º Aula</label>
+                    <input id="5" type="checkbox">
+                    <label for="6">6º Aula</label>
+                    <input id="6" type="checkbox">
+                    <label for="7">7º Aula</label>
+                    <input id="7" type="checkbox">
+                </div>
+            </div>
+            <label for="">Turma:</label>
+            <input type="text">
+            
+            <!--
+            TENTAR FAZER ESSE SELECIONADOR AMANHÃ. A IDEIA É
+            FAZER COM QUE AO SELECIONAR UM PERIODO APARECE APENAS AS TURMAS DAQUELE PERIODO.
+
+            <select name="" id="">
+                <option value="" id="esconder">--- Selecione a turma ---</option>
+                <option value="">6ºA</option>
+                <option value="">7ºA</option>
+                <option value="">8ºA</option>
+            </select>
+            -->
+
+            <label for="">Professor e Matéria:</label>
+            <input type="text">
+            <button id="confirm">Adicionar aula</button>
+        </div>
+    </div>
+</body>
+</html>
