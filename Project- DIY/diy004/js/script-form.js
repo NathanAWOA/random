@@ -3,18 +3,11 @@ function firstStage() {
     const profExtra = document.querySelector("#prof-extra");
     const materias = document.querySelector("#materias");
     const confirmBtn = document.querySelector("#confirm");
-    
-    /*
-    const manha = document.querySelector("#manha").value;
-    */
-    
     const manha = document.querySelector("#manha");
     const tarde = document.querySelector("#tarde");
     const noite = document.querySelector("#noite");
-    
+ 
     var periodo = false;
-
-    
 
     confirmBtn.addEventListener("click", () => {
         
