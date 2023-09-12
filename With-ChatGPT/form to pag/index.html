@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+</head>
+<body>
+  <h1>Formulário</h1>
+  <form id="meuFormulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" name="idade"><br>
+
+    <label for="interesses">Interesses:</label><br>
+    <input type="checkbox" id="esportes" name="interesses" value="Esportes">
+    <label for="esportes">Esportes</label><br>
+    <input type="checkbox" id="musica" name="interesses" value="Música">
+    <label for="musica">Música</label><br>
+    <input type="checkbox" id="leitura" name="interesses" value="Leitura">
+    <label for="leitura">Leitura</label><br>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const idade = document.getElementById("idade").value;
+
+      // Coleta os valores dos checkboxes marcados
+      const interesses = [];
+      const checkboxes = document.getElementsByName("interesses");
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          interesses.push(checkbox.value);
+        }
+      });
+
+      // Armazena os dados no localStorage
+      localStorage.setItem("nome", nome);
+      localStorage.setItem("email", email);
+      localStorage.setItem("idade", idade);
+      localStorage.setItem("interesses", JSON.stringify(interesses));
+
+      // Redireciona para a segunda página
+      window.location.href = "segundaPagina.html";
+    });
+  </script>
+</body>
+</html>

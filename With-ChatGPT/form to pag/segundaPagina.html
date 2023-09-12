@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados do Formulário</title>
+</head>
+<body>
+  <h1>Dados do Formulário</h1>
+  <h1>Nome:</h1>
+  <p id="nome"></p>
+
+  <h1>Email:</h1>
+  <p id="email"></p>
+
+  <h1>Idade:</h1>
+  <p id="idade"></p>
+
+  <h1>Interesses:</h1>
+  <p id="interesses"></p>
+
+  <!-- Botão para criar a tabela -->
+  <button id="criarTabela">Criar Tabela</button>
+
+  <div id="tabelaContainer"></div>
+
+  <script>
+    // Função para criar a tabela com base nos dados
+    function criarTabela() {
+      const nome = localStorage.getItem("nome");
+      const email = localStorage.getItem("email");
+      const idade = localStorage.getItem("idade");
+      const interesses = JSON.parse(localStorage.getItem("interesses"));
+
+      // Cria uma tabela HTML
+      const tabela = document.createElement("table");
+      const cabecalho = tabela.createTHead();
+      const corpo = tabela.createTBody();
+
+      // Cria a linha de cabeçalho
+      const linhaCabecalho = cabecalho.insertRow(0);
+      const coluna1 = linhaCabecalho.insertCell(0);
+      const coluna2 = linhaCabecalho.insertCell(1);
+      coluna1.textContent = "Campo";
+      coluna2.textContent = "Valor";
+
+      // Cria as linhas de dados
+      const campos = ["Nome", "Email", "Idade", "Interesses"];
+      const valores = [nome, email, idade, interesses.join(", ")];
+
+      for (let i = 0; i < campos.length; i++) {
+        const linhaDados = corpo.insertRow(i);
+        const campo = linhaDados.insertCell(0);
+        const valor = linhaDados.insertCell(1);
+        campo.textContent = campos[i];
+        valor.textContent = valores[i];
+      }
+
+      // Adiciona a tabela ao elemento de contêiner
+      const tabelaContainer = document.getElementById("tabelaContainer");
+      tabelaContainer.appendChild(tabela);
+    }
+
+    // Obtém os dados e exibe na página
+    const nome = localStorage.getItem("nome");
+    const email = localStorage.getItem("email");
+    const idade = localStorage.getItem("idade");
+    const interesses = JSON.parse(localStorage.getItem("interesses"));
+
+    document.getElementById("nome").textContent = nome;
+    document.getElementById("email").textContent = email;
+    document.getElementById("idade").textContent = idade;
+    document.getElementById("interesses").textContent = interesses.join(", ");
+
+    // Adiciona um ouvinte de evento ao botão para criar a tabela
+    document.getElementById("criarTabela").addEventListener("click", criarTabela);
+  </script>
+</body>
+</html>
