@@ -1,4 +1,4 @@
-function firstStage() {
+function firstStage(periodo) {
     const prof = document.querySelector("#prof");
     const profExtra = document.querySelector("#prof-extra");
     const materias = document.querySelector("#materias");
@@ -7,7 +7,7 @@ function firstStage() {
     const tarde = document.querySelector("#tarde");
     const noite = document.querySelector("#noite");
  
-    var periodo = false;
+     periodo = false;
 
     confirmBtn.addEventListener("click", () => {
         

@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test - Horários</title>
-    <link rel="stylesheet" href="css/style-form.css">
+    <link rel="stylesheet" href="./css/style-firstPage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
+    <!--
     <div id="container">
         <div id="inputs-container">
             <label for="periodo">Periodo</label>
@@ -47,7 +50,7 @@
             <label for="">Turma:</label>
             <input type="text">
             
-            <!--
+           /*
             TENTAR FAZER ESSE SELECIONADOR AMANHÃ. A IDEIA É
             FAZER COM QUE AO SELECIONAR UM PERIODO APARECE APENAS AS TURMAS DAQUELE PERIODO.
 
@@ -57,12 +60,66 @@
                 <option value="">7ºA</option>
                 <option value="">8ºA</option>
             </select>
-            -->
+           */
 
             <label for="">Professor e Matéria:</label>
             <input type="text">
             <button id="confirm">Adicionar aula</button>
         </div>
+    </div>
+    -->
+    <header>Horário das Aulas</header>
+    <div id="container"><!--form action="" method="post"-->
+        <!--
+        <div id="inputs-container">
+            <label for="prof">Professor:</label>
+            <input type="text" id="prof">
+            <label for="prof-extra">Professor Extra:</label>
+            <input type="text" id="prof-extra">
+            <label for="">Matéria:</label>
+            <select name="materias" id="materias">
+                <option value="" id="esconder" selected>--- Selecione a Matéria ---</option>
+                <option value="Português">Português</option>
+                <option value="Inglês">Inglês</option>
+                <option value="Geografia">Geografia</option>
+                <option value="Sociologia">Sociologia</option>
+                <option value="Filosofia">Filosofia</option>
+                <option value="História">História</option>
+                <option value="Ed. Física">Ed. Física</option>
+                <option value="Arte">Arte</option>
+                <option value="Matemática">Matemática</option>
+                <option value="Física">Física</option>
+                <option value="Química">Química</option>
+                <option value="Biologia">Biologia</option>
+            </select>  
+            <label for="">Periodo:</label>
+            <div id="periodo-container">
+                <label for="manha">Manhã</label>
+                <input id="manha" type="checkbox" value="Manhã">
+                <label for="tarde">Tarde</label>
+                <input id="tarde" type="checkbox" value="Tarde">
+                <label for="noite">Noite</label>
+                <input id="noite" type="checkbox" value="Noite">
+            </div>
+            
+        </div>
+        -->
+        <div id="table-container">
+            <h1>Manhã</h1>
+            <div id="manha">
+
+            </div>
+            <h1>Tarde</h1>
+            <div id="tarde">
+
+            </div>
+            <h1>Noite</h1>
+            <div id="noite">
+
+            </div>
+        </div>
+        <button id="generate-pdf">Gerar PDF</button>
+        <button id="edit">Editar Horário</button>
     </div>
 </body>
 </html>
