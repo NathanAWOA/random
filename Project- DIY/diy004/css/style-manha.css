@@ -41,14 +41,37 @@ header {
 
 /*ESTILIZAR ENTRE AQUI*/
 #fundamental {
-    width: 600px;
-    height: 300px;
+    width: 1500px;
+    height: 845px;
     border: 2px solid #313131;
 }
 
+table, th, td {
+    border: 1px solid #313131;
+}
+
+table {
+    width: 1500px;
+}
+
+#intervalo {
+    height: 2px;
+    background-color: #313131;
+}
+
+#break {
+
+    height: 5px;
+    background-color: #313131;
+}
+
+#day {
+    width: 50px;
+}
+
 #medio {
-    width: 600px;
-    height: 300px;
+    width: 1500px;
+    height: 845px;
     border: 2px solid #313131;
 }
 
