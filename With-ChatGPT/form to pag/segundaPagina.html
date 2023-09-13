@@ -7,6 +7,9 @@
 </head>
 <body>
   <h1>Dados do Formulário</h1>
+  <h1>Testando:</h1>
+  <p id="teste"></p>
+
   <h1>Nome:</h1>
   <p id="nome"></p>
 
@@ -30,6 +33,7 @@
       const nome = localStorage.getItem("nome");
       const email = localStorage.getItem("email");
       const idade = localStorage.getItem("idade");
+      const test = localStorage.getItem("teste")
       const interesses = JSON.parse(localStorage.getItem("interesses"));
 
       // Cria uma tabela HTML
@@ -45,7 +49,7 @@
       coluna2.textContent = "Valor";
 
       // Cria as linhas de dados
-      const campos = ["Nome", "Email", "Idade", "Interesses"];
+      const campos = ["teste", "Nome", "Email", "Idade", "Interesses"];
       const valores = [nome, email, idade, interesses.join(", ")];
 
       for (let i = 0; i < campos.length; i++) {
@@ -65,11 +69,13 @@
     const nome = localStorage.getItem("nome");
     const email = localStorage.getItem("email");
     const idade = localStorage.getItem("idade");
+    const test = localStorage.getItem("teste");
     const interesses = JSON.parse(localStorage.getItem("interesses"));
 
     document.getElementById("nome").textContent = nome;
     document.getElementById("email").textContent = email;
     document.getElementById("idade").textContent = idade;
+    document.getElementById("teste").textContent = test;
     document.getElementById("interesses").textContent = interesses.join(", ");
 
     // Adiciona um ouvinte de evento ao botão para criar a tabela

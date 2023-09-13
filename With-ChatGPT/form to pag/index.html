@@ -8,6 +8,7 @@
 <body>
   <h1>Formulário</h1>
   <form id="meuFormulario">
+    <p id="teste">teste</p>
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome"><br>
 
@@ -35,6 +36,7 @@
       const nome = document.getElementById("nome").value;
       const email = document.getElementById("email").value;
       const idade = document.getElementById("idade").value;
+      const test = document.getElementById("teste").innerText;
 
       // Coleta os valores dos checkboxes marcados
       const interesses = [];
@@ -49,6 +51,7 @@
       localStorage.setItem("nome", nome);
       localStorage.setItem("email", email);
       localStorage.setItem("idade", idade);
+      localStorage.setItem("teste", test);
       localStorage.setItem("interesses", JSON.stringify(interesses));
 
       // Redireciona para a segunda página
