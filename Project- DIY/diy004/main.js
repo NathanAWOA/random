@@ -26,3 +26,14 @@ function openForm() {
 editBtn.addEventListener("click", () => {
     openForm();
 });
+
+let manha = document.querySelector("#manha");
+
+function openMorningTable() {
+    const morningTable = window.open("./pages/manha.html", "_self");
+    morningTable.focus()        
+}
+
+manha.addEventListener("click", () => {
+    openMorningTable();
+})

@@ -4,7 +4,7 @@ const backBtn = document.querySelector("#back");
 
 generatePdfBtn.addEventListener("click", () => {
     
-    const content = document.querySelector("#inputs-container");
+    const content = document.querySelector("#container");
     
     const options = {
         margin: [10, 10, 10, 10],
