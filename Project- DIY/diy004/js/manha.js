@@ -4,7 +4,7 @@ const backBtn = document.querySelector("#back");
 
 generatePdfBtn.addEventListener("click", () => {
     
-    const content = document.querySelector("#container");
+    const content = document.querySelector("#table-container");
     
     const options = {
         margin: [10, 10, 10, 10],
@@ -35,3 +35,10 @@ editBtn.addEventListener("click", () => {
 backBtn.addEventListener("click", () => {
     backToFirstPage();
 });
+
+/*
+IDEA
+
+CREATE SOME FUNCTION CALLED DATA() TO GET THE TABLE DATAS AND TRY USE THAT TO MAKE THE PDF.
+
+*/
