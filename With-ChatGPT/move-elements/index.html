@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mover Elementos</title>
+    <title>Mover Elementos Dentro de um Frame</title>
     <style>
+        *{
+            margin: 0;
+        }
+
+        body {
+            background-color: #818;
+        }
+
+        .frame {
+            background-color: #f1f1f1;
+            width: 50%;
+            height: 80vh;
+            position: relative;
+            border: 2px solid #333;
+            overflow: hidden; /* Oculta elementos que ultrapassam os limites da div */
+        }
+
         .elemento-arrastavel {
-            width: 50px;
-            height: 50px;
+            width: 75px;
+            height: 75px;
             background-color: #3498db;
             position: absolute;
             cursor: pointer;
+
+            text-align: center;
+            font-size: 3rem;
         }
     </style>
 </head>
 <body>
-    <div class="elemento-arrastavel" id="elemento1"></div>
-    <div class="elemento-arrastavel" id="elemento2"></div>
-    <div class="elemento-arrastavel" id="elemento3"></div>
+    <div class="frame">
+        <div class="elemento-arrastavel" id="elemento1">あ</div>
+        <div class="elemento-arrastavel" id="elemento2">い</div>
+        <div class="elemento-arrastavel" id="elemento3">う</div>
+        <div class="elemento-arrastavel" id="elemento3">え</div>
+        <div class="elemento-arrastavel" id="elemento3">お</div>
+    </div>
 
     <script>
         let elementoArrastavel = null;
@@ -35,8 +59,21 @@
         function moverElemento(event) {
             if (!elementoArrastavel) return;
 
-            elementoArrastavel.style.left = event.clientX - offsetX + "px";
-            elementoArrastavel.style.top = event.clientY - offsetY + "px";
+            const frame = document.querySelector(".frame");
+            const limiteEsquerdo = frame.getBoundingClientRect().left;
+            const limiteDireito = frame.getBoundingClientRect().right - elementoArrastavel.offsetWidth;
+            const limiteSuperior = frame.getBoundingClientRect().top;
+            const limiteInferior = frame.getBoundingClientRect().bottom - elementoArrastavel.offsetHeight;
+
+            let novaPosicaoX = event.clientX - offsetX;
+            let novaPosicaoY = event.clientY - offsetY;
+
+            // Limitar o movimento dentro da área de contenção
+            novaPosicaoX = Math.min(Math.max(novaPosicaoX, limiteEsquerdo), limiteDireito);
+            novaPosicaoY = Math.min(Math.max(novaPosicaoY, limiteSuperior), limiteInferior);
+
+            elementoArrastavel.style.left = novaPosicaoX + "px";
+            elementoArrastavel.style.top = novaPosicaoY + "px";
         }
 
         function encerrarArraste() {
