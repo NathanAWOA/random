@@ -40,7 +40,7 @@ function onDrag({movementX, movementY}){
 
     console.log(left1)
     console.log(top1)
-
+/*
     console.log(left2)
     console.log(top2)
 
@@ -49,6 +49,7 @@ function onDrag({movementX, movementY}){
 
     console.log(left4)
     console.log(top4)
+    */
 }
 
 
