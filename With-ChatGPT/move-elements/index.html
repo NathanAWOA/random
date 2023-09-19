@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mover Elementos</title>
+    <style>
+        .elemento-arrastavel {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="elemento-arrastavel" id="elemento1"></div>
+    <div class="elemento-arrastavel" id="elemento2"></div>
+    <div class="elemento-arrastavel" id="elemento3"></div>
+
+    <script>
+        let elementoArrastavel = null;
+        let offsetX, offsetY;
+
+        function iniciarArraste(event) {
+            elementoArrastavel = event.target;
+            offsetX = event.clientX - elementoArrastavel.getBoundingClientRect().left;
+            offsetY = event.clientY - elementoArrastavel.getBoundingClientRect().top;
+
+            document.addEventListener("mousemove", moverElemento);
+            document.addEventListener("mouseup", encerrarArraste);
+        }
+
+        function moverElemento(event) {
+            if (!elementoArrastavel) return;
+
+            elementoArrastavel.style.left = event.clientX - offsetX + "px";
+            elementoArrastavel.style.top = event.clientY - offsetY + "px";
+        }
+
+        function encerrarArraste() {
+            if (!elementoArrastavel) return;
+
+            document.removeEventListener("mousemove", moverElemento);
+            document.removeEventListener("mouseup", encerrarArraste);
+            elementoArrastavel = null;
+        }
+
+        const elementosArrastaveis = document.querySelectorAll(".elemento-arrastavel");
+        elementosArrastaveis.forEach(elemento => {
+            elemento.addEventListener("mousedown", iniciarArraste);
+        });
+    </script>
+</body>
+</html>
