@@ -1,0 +1,36 @@
+body {
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 90%;
+    max-width: 600px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#result {
+    font-weight: bold;
+}
+
+span {
+    font-size: 3.5rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+input {
+    font-size: 2rem;
+}
