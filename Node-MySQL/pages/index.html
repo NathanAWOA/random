@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+    <style>
+        #nihongo-db {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            width: 200px;
+        }
+
+        #btn{
+            width: 5rem;
+            border-radius: 5px;
+            border-style: none;
+            border-bottom: 3px solid #383838;
+        }
+        #btn:hover{
+            color: #f1f1f1;
+            background-color: #adadad;
+            border-bottom: 3px solid #333;
+        }
+        #btn:active{
+            border-bottom: 1px solid #333;
+            transform: translateY(5px);
+        }
+    </style>
+
+</head>
+<body>
+    <div id="nihongo-db">
+        <h1>Nihongo database</h1>
+        <h3>Add new word:</h3>
+        <label for="hiragana">Hiranaga: </label>
+        <input type="text" id="hiragana" name="hiragana">
+        <label for="katakana">Katakana: </label>
+        <input type="text" id="katakana" name="katakana">
+        <label for="kanji">Kanji: </label>
+        <input type="text" id="kanji" name="kanji">
+        <label for="kanji">Tradução: </label>
+        <input type="text" id="br" name="br">
+        <button id="btn">Send</button>
+    </div>
+
+    <script>
+        const socket = io('http://localhost:8083/')
+        const btn = document.querySelector("#btn")
+        const hiragana = document.querySelector("#hiragana")
+        const katanana = document.querySelector("#katanana")
+        const kanji = document.querySelector("#kanji")
+        const translate = document.querySelector("#br")
+        
+        btn.addEventListener("click", () => {
+            if(hiragana.value != ""){
+                console.log(`hiragana: ${hiragana.value}`)
+            }
+
+            if(katakana.value != ""){
+                console.log(`katakana: ${katakana.value}`)
+            }
+
+            if(kanji.value != ""){
+                console.log(`kanji: ${kanji.value}`)
+            }
+
+            if(br.value != ""){
+                console.log(`br: ${translate.value}`)
+            }
+
+            //OBJECT QUE VAI SER ENVIADO PRO BACKEND
+            var dataObject = {
+            hira: hiragana.value,
+            kata: katakana.value,
+            kan: kanji.value,
+            br: translate.value
+            }
+            console.log(dataObject)
+            //ENVIA PRO BACKEND
+            socket.emit('sendData', dataObject)
+        })
+            
+    </script>
+</body>
+</html>
