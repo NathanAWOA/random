@@ -17,16 +17,36 @@ const io = socket(httpServer, {
 
 //SEQUILIZE
 const Sequilize = require('sequelize')
-const sequilize = new Sequilize('teste', 'root', 'password123A$', {
+const sequilize = new Sequilize('nihongo', 'root', 'password123A$', {
     host: 'localhost',
     dialect: 'mysql'
 })
 
-const userId = []
+const Words = sequilize.define(
+    'words', {
+        hiragana: {
+            type: Sequilize.STRING
+        },
+        katakana: {
+            type: Sequilize.STRING
+        },
+        kanji: {
+            type: Sequilize.STRING
+        },
+        br: {
+            type: Sequilize.STRING
+        }
+    }
+)
 
+//NECESSARIO RODAR ISSO ANTES DE ADD DADOS AO DB
+Words.sync({force: true})
+
+
+const userId = []
 //ARRAY DOS DADOS VINDOS DO FRONT
-let wordsInfo = []
-let test = []
+let wordsReceived = []
+
 //CONNECTION
 io.on('connection', (client) => {
     console.log(`O usuário com o id "${client.id}" acabou de logar.`)
@@ -36,39 +56,20 @@ io.on('connection', (client) => {
         userId.splice(userId.indexOf(client), 1)
     })
 
-    client.on('sendData', data => {
-        wordsInfo.push(data)
-        console.log(data)
+    client.on('sendData', allWords => {
+        wordsReceived.concat(allWords)
+        console.log(allWords)
         
-        const lang = sequilize.define(
-            'words', {
-                hiragana: {
-                    type: Sequilize.STRING
-                },
-                katakana: {
-                    type: Sequilize.STRING
-                },
-                kanji: {
-                    type: Sequilize.STRING
-                },
-                br: {
-                    type: Sequilize.STRING
-                }
-            }
-        )
-        
-        //NECESSARIO RODAR ISSO ANTES DE ADD DADOS AO DB
-        /*lang.sync({force: true})*/
-        
-        //INSERT INTO + VALUES
-        /*
-        lang.create({
-            hiragana: "だれ",
-            katakana: "",
-            kanji: "誰",
-            br: "Quem"
-        })  
-        */
+        async function inserirDados() {
+        try {
+            //INSERE OS DADOS NO MYSQL
+            const result = await Words.create(allWords)
+            console.log('Dados inseridos com sucesso: ', result.toJSON())
+        }catch(erro) {
+            console.log('Erro ao inserir dados no MySQL: ', erro)
+        }}
+
+        inserirDados()
     })
 })
 

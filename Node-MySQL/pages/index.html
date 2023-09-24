@@ -39,7 +39,7 @@
     <div id="nihongo-db">
         <h1>Nihongo database</h1>
         <h3>Add new word:</h3>
-        <label for="hiragana">Hiranaga: </label>
+        <label for="hiragana">Hiragana: </label>
         <input type="text" id="hiragana" name="hiragana">
         <label for="katakana">Katakana: </label>
         <input type="text" id="katakana" name="katakana">
@@ -76,15 +76,21 @@
             }
 
             //OBJECT QUE VAI SER ENVIADO PRO BACKEND
+            
             var dataObject = {
-            hira: hiragana.value,
-            kata: katakana.value,
-            kan: kanji.value,
+            hiragana: hiragana.value,
+            katakana: katakana.value,
+            kanji: kanji.value,
             br: translate.value
             }
             console.log(dataObject)
+            
+
             //ENVIA PRO BACKEND
             socket.emit('sendData', dataObject)
+
+            //TAMBÉM DA PARA ENVIAR ELES SEPARADAMENTE
+            /*socket.emit('sendData', hiragana.value)*/
         })
             
     </script>
