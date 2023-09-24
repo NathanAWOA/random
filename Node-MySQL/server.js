@@ -6,7 +6,7 @@ const app = express()
 const socket = require('socket.io')
 
 //PORT
-const PORT = process.env.PORT || 8083
+const PORT = process.env.PORT || 8084
 
 //HTTP
 const http = require('http')
@@ -17,7 +17,7 @@ const io = socket(httpServer, {
 
 //SEQUILIZE
 const Sequilize = require('sequelize')
-const sequilize = new Sequilize('lang', 'root', 'password123A$', {
+const sequilize = new Sequilize('teste', 'root', 'password123A$', {
     host: 'localhost',
     dialect: 'mysql'
 })
@@ -26,7 +26,7 @@ const userId = []
 
 //ARRAY DOS DADOS VINDOS DO FRONT
 let wordsInfo = []
-
+let test = []
 //CONNECTION
 io.on('connection', (client) => {
     console.log(`O usuário com o id "${client.id}" acabou de logar.`)
@@ -36,14 +36,40 @@ io.on('connection', (client) => {
         userId.splice(userId.indexOf(client), 1)
     })
 
-    
     client.on('sendData', data => {
-    wordsInfo.push(data)
-    console.log(wordsInfo)
-    
+        wordsInfo.push(data)
+        console.log(data)
+        
+        const lang = sequilize.define(
+            'words', {
+                hiragana: {
+                    type: Sequilize.STRING
+                },
+                katakana: {
+                    type: Sequilize.STRING
+                },
+                kanji: {
+                    type: Sequilize.STRING
+                },
+                br: {
+                    type: Sequilize.STRING
+                }
+            }
+        )
+        
+        //NECESSARIO RODAR ISSO ANTES DE ADD DADOS AO DB
+        /*lang.sync({force: true})*/
+        
+        //INSERT INTO + VALUES
+        /*
+        lang.create({
+            hiragana: "だれ",
+            katakana: "",
+            kanji: "誰",
+            br: "Quem"
+        })  
+        */
     })
-    
-
 })
 
 //MANIPULANDO DB COM SEQUELIZE
@@ -53,40 +79,10 @@ sequilize.authenticate().then(function() {
     console.log(`Fail: ${erro}`)
 })
 
-const lang = sequilize.define(
-    'words', {
-        hiragana: {
-            type: Sequilize.STRING
-        },
-        katakana: {
-            type: Sequilize.STRING
-        },
-        kanji: {
-            type: Sequilize.STRING
-        },
-        br: {
-            type: Sequilize.STRING
-        }
-})
-
-
-//NECESSARIO RODAR ISSO ANTES DE ADD DADOS AO DB
-/*lang.sync({force: true})*/
-
-//INSERT INTO + VALUES
-/*  
-    lang.create({
-        hiragana: "だれ",
-        katakana: "",
-        kanji: "誰",
-        br: "Quem"
-    })  
-*/
-
 //PATH
     app.use(express.static(__dirname + '/pages'))
 
 //PORTA
 httpServer.listen(PORT, () => {
-    console.log(`Server running at http://localhost:8083`)
+    console.log(`Server running at http://localhost:8084`)
 })
