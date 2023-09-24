@@ -57,7 +57,7 @@ io.on('connection', (client) => {
     })
 
     client.on('sendData', allWords => {
-        wordsReceived.concat(allWords)
+        wordsReceived.push(allWords)//FUNCIONARIA COM CONCAT() TBM
         console.log(allWords)
         
         async function inserirDados() {
