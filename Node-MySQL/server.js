@@ -40,7 +40,7 @@ const Words = sequilize.define(
 )
 
 //NECESSARIO RODAR ISSO ANTES DE ADD DADOS AO DB
-Words.sync({force: true})
+//Words.sync({force: true})
 
 
 const userId = []
