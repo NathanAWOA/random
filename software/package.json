@@ -1,7 +1,6 @@
 {
   "name": "software",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "electron ."
@@ -11,5 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^26.2.4"
-  }
+  },
+  "description": ""
 }
