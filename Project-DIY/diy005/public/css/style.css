@@ -14,8 +14,14 @@
 }
 
 .logo {
-    padding: 0 5px;
+    padding: 0 15px;
     font-size: 3rem;
+    margin-right: 10px;
+}
+
+.logo .logo-link {
+    color: white;
+    text-decoration: none;
 }
 
 .list{
@@ -28,7 +34,6 @@
 
 .list-item{
     font-size: 2rem;
-    
 }
 
 .nav-link {
@@ -57,4 +62,17 @@
     background-color: black;
     color: white;
     height: 190px;
+}
+
+.about-title {
+    text-align: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.thumbsup {
+    width: 250px;
 }
