@@ -18,7 +18,11 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/users', users)
+app.get('/', (req, res) => {
+    res.redirect('/home')
+})
+
+app.use('/home', users)
 
 const PORT = process.env.PORT || 8089
 
