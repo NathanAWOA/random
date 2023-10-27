@@ -8,5 +8,9 @@ let word = prompt("")
 wordSplited = word.split([])
 
 for(i = 0; i < wordSplited.length; i++){
-    console.log(wordSplited[i])
+    if(wordSplited[i] === 'a'){
+        console.log("yep")
+    } else {
+        console.log('nop')
+    }
 }
