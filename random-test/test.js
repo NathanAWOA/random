@@ -13,4 +13,6 @@ for(i = 0; i < wordSplited.length; i++){
     } else {
         console.log('nop')
     }
+
+    /*for usando o j agr para passar pelo alphabet dentro desse for somar j mais 5 (ou qualquer que seja a chave de decodificação) depois criar um if que defini que se o valor de j ficar superior ao length de alphabet então ele passara primeiro por uma subtração onde sera feito j menos alphabet.length assim criando uma impressão de loop*/
 }
