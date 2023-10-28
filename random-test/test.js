@@ -92,3 +92,11 @@ function codify(){
         console.log(alphabet[key-2])
     }
 }
+
+/*
+var a = ['bla', bla]
+var b = a.toString()
+console.log(b) //bla,bla
+var c = a.join("")
+console.log(c) //blabla
+*/
