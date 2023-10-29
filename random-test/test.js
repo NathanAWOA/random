@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")({sigint:true})
-const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ']
 
 console.log("Write something")
 
@@ -13,11 +13,14 @@ for(i = 0; i < wordSplited.length; i++){
 
 function codify(){
     let key = 5
+    let test = []
     if(wordSplited[i] === 'a'){
         console.log(alphabet[4])
+        // test.push("e")
     }
     if(wordSplited[i] === 'b'){
         console.log(alphabet[key])
+        // test.push("f")
     }
     if(wordSplited[i] === 'c'){
         console.log(alphabet[1+key])
@@ -79,6 +82,9 @@ function codify(){
     if(wordSplited[i] === 'v'){
         console.log(alphabet[20+key])
     }
+    if(wordSplited[i] === ' '){
+        console.log(alphabet[21+key])
+    }
     if(wordSplited[i] === 'w'){
         console.log(alphabet[key-5])
     }
@@ -94,7 +100,7 @@ function codify(){
 }
 
 /*
-var a = ['bla', bla]
+var a = ['bla', 'bla']
 var b = a.toString()
 console.log(b) //bla,bla
 var c = a.join("")
